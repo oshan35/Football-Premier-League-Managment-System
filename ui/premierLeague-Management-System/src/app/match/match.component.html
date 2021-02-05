@@ -1,0 +1,65 @@
+<body>
+<div class="container">
+</div>
+
+<div class='search-field'>
+  <form class="form" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <input class="search-bar" type="search" name="search" ngModel placeholder="Search" aria-label="Search" id="search-field">
+    <button class="search-btn" type="submit">Search</button>
+    <button (click)='default()' class='default-btn'>🗘 Default</button>
+  </form>
+  <div class="control-btn">
+    <button (click)="sort(1)" class='sort-btn'>Decending Order</button>
+    <button (click)="sort(0)" class='sort-btn'>Assending Order</button>
+
+    <button (click)='getRandomMatch()' class='sort-btn'>Random Match</button>
+  </div>
+</div>
+
+<div class="match-table">
+
+  <table mat-table [dataSource]="matchDataSource" class="mat-table" class="mat-elevation-z8" >
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- team01 Column -->
+    <ng-container matColumnDef="team01">
+      <th mat-header-cell *matHeaderCellDef class='headder'> Team 1</th>
+      <td mat-cell *matCellDef="let element" > {{element.team01}} </td>
+    </ng-container>
+
+    <!-- team02 Column -->
+    <ng-container matColumnDef="team02">
+      <th mat-header-cell *matHeaderCellDef class='headder'> Team 2</th>
+      <td mat-cell *matCellDef="let element" > {{element.team02}} </td>
+    </ng-container>
+
+    <!-- date Column -->
+    <ng-container matColumnDef="matchDate">
+      <th mat-header-cell *matHeaderCellDef class='headder' > Date </th>
+      <td mat-cell *matCellDef="let element" > {{element.date}} </td>
+    </ng-container>
+
+    <!-- team01Goals Column -->
+    <ng-container matColumnDef="team01Goals">
+      <th mat-header-cell *matHeaderCellDef class='headder'> Team 1 Goals</th>
+      <td mat-cell *matCellDef="let element" > {{element.team01Goals}} </td>
+    </ng-container>
+
+    <!-- team02Goals Column -->
+    <ng-container matColumnDef="team02Goals">
+      <th mat-header-cell *matHeaderCellDef class='headder'> Team 2 Goals</th>
+      <td mat-cell *matCellDef="let element"> {{element.team02Goals}} </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</div>
+
+
+
+</body>

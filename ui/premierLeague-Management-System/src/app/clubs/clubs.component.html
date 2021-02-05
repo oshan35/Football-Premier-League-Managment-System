@@ -1,0 +1,94 @@
+
+<body>
+
+<!--    <div class="main-container">-->
+
+<!--    </div>-->
+    <div class="containers">
+
+      <div class="left">
+        <form class="search-form" #f="ngForm" (ngSubmit)="onSubmit(f)" >
+	      <input class="search-bar" type="search" name="search" ngModel placeholder="Search" aria-label="Search" id="search-field">
+	      <button class="search-btn" type="submit">Search</button>
+        <button (click)='default()' id="default-btn">🗘 Default</button>
+      </form>
+      </div>
+
+      <div class="right">
+        <mat-form-field>
+        <mat-label [ngStyle]="{'color':'black'}">Sort by</mat-label>
+        <mat-select [ngStyle]="{'color':'black'}">
+          <mat-option (click)="clubPointsSort(0)" value="Points" >Club Points</mat-option>
+          <mat-option (click)="winsSort(0)" value="Wins" >Wins</mat-option>
+          <mat-option (click)="goalsScoredSort(0)" value="Goals" >Goals Scored</mat-option>
+        </mat-select>
+      </mat-form-field>
+      </div>
+
+    </div>
+
+    <table mat-table [dataSource]="clubDataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Club ID Column -->
+  <ng-container matColumnDef="clubId">
+    <th mat-header-cell *matHeaderCellDef class='headder'> Club ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.clubId}} </td>
+  </ng-container>
+
+  <!-- Club Name Column -->
+  <ng-container matColumnDef="clubName">
+    <th mat-header-cell *matHeaderCellDef class='headder'> Club Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.clubName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="clubPoints">
+    <th mat-header-cell *matHeaderCellDef class='headder' >Club Points</th>
+    <td mat-cell *matCellDef="let element"> {{element.clubPoints}} </td>
+  </ng-container>
+
+      <ng-container matColumnDef="goalsScored">
+        <th mat-header-cell *matHeaderCellDef class='headder'>Goals Scored</th>
+        <td mat-cell *matCellDef="let element"> {{element.goalsScored}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="goalDifference">
+      <th mat-header-cell *matHeaderCellDef class='headder'>Goal Defference</th>
+      <td mat-cell *matCellDef="let element"> {{element.goalDifference}} </td>
+    </ng-container>
+
+  <!-- Played Match Count Column -->
+  <ng-container matColumnDef="playedMatchCount">
+    <th mat-header-cell *matHeaderCellDef class='headder'> Played </th>
+    <td mat-cell *matCellDef="let element"> {{element.playedMatchCount}} </td>
+  </ng-container>
+
+  <!-- Wins Column -->
+  <ng-container matColumnDef="wins">
+    <th mat-header-cell *matHeaderCellDef class='headder' > Wins </th>
+    <td mat-cell *matCellDef="let element"> {{element.wins}} </td>
+  </ng-container>
+
+    <!-- draws Column -->
+  <ng-container matColumnDef="draws">
+    <th mat-header-cell *matHeaderCellDef class='headder'> draws </th>
+    <td mat-cell *matCellDef="let element"> {{element.draws}} </td>
+  </ng-container>
+
+  <!-- Loss Column -->
+  <ng-container matColumnDef="losses">
+    <th mat-header-cell *matHeaderCellDef class='headder'> Losses </th>
+    <td mat-cell *matCellDef="let element"> {{element.losses}} </td>
+  </ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+
+
+</body>

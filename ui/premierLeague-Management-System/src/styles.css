@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+body{
+    padding: 0;
+    font-size: 20px;
+
+}
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+}
+
+header{
+    background-color: blueviolet;
+    padding: 10px 5px;
+}
+
+a{
+    color: azure;
+    text-decoration: none;
+}
+
+a logo{
+    font-weight: bold;
+}
+
+nav{
+    float: right;
+
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 5px;
+    display: flex;
+}
+
+nav ul li a{
+    padding: 2em;
+
+}
+
+nav ul li a:hover{
+    font-weight: bold;
+    color: black;
+    opacity: 50%;
+
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
