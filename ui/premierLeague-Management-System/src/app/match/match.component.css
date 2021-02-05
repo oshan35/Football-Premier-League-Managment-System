@@ -1,0 +1,81 @@
+table {
+  width: 100%;
+}
+
+.mat-table{
+  width: 90%;
+  margin: auto auto auto auto;
+}
+
+.headder{
+  font-size: medium;
+}
+
+.sort-btn{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  align-items: center;
+}
+.search-field{
+  width: 90%;
+  margin: auto auto auto auto;
+}
+
+.control-btn{
+  float: right;
+}
+body{
+  background-color: #B2BABB;
+  height: 792px;
+}
+.form{
+  float: left;
+  clear: both;
+}
+.default-btn{
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 13px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#search-field{
+  padding: 15px 32px;
+  background-color:#ECF0F1;
+  border:black;
+  margin: 4px 2px;
+  cursor:pointer;
+  display: inline-block;
+
+}
+
+.search-btn{
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+
+

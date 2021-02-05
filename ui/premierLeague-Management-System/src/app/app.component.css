@@ -1,0 +1,32 @@
+@font-face {
+  font-family: Blindspot;
+  src: url("src/assets/fonts/Blindspot.otf");
+}
+
+.navigation{
+  justify-content: space-between;
+  height: 125px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px;
+}
+
+span{
+  padding-right: 4rem;
+  float: right;
+}
+
+#icon-img{
+  width:100px;
+  height:auto;
+  margin-top: 5px;
+  float: left;
+  padding-right: 1rem;
+}
+
+#hedder-name{
+  font-family: Blindspot;
+  font-size: 70px;
+  margin-top: 30px;
+
+}
